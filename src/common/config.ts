@@ -1,7 +1,9 @@
 import { app } from "electron"; // tslint:disable-line:no-implicit-dependencies
 import fs from "fs";
 import path from "path";
-import { parse } from "yaml";
+import { parse, stringify } from "yaml";
+
+app.setName("karafriends");
 
 export interface KarafriendsConfig {
   // Whether to use the low bitrate URLs for DAM songs
@@ -60,7 +62,19 @@ function getConfig(): KarafriendsConfig {
     };
   }
 
-  console.log("No local configs found. Using default.");
+  console.log(
+    "No local configs found. Creating empty config and using defaults."
+  );
+  const yamlStr = stringify(DEFAULT_CONFIG);
+
+  fs.writeFile(configFilepath, yamlStr, "utf8", (err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("YAML file has been saved.");
+    }
+  });
+
   return DEFAULT_CONFIG;
 }
 

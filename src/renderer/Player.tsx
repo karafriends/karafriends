@@ -125,6 +125,24 @@ function Player(props: {
                   if (!videoRef.current) return;
 
                   hls = new Hls();
+                  hls.on(
+                    Hls.Events.ERROR,
+                    (event: typeof Hls.Events.ERROR, data: any) => {
+                      switch (data.type) {
+                        case Hls.ErrorTypes.NETWORK_ERROR:
+                          console.log(
+                            "network error on playlist load, skipping to next song."
+                          );
+                          M.toast({
+                            html: `Error loading song ${popSong.artistName} - ${popSong.name}! Skipping...`,
+                          });
+                          pollQueue();
+                          break;
+                        // You can handle other error types here if needed
+                      }
+                    }
+                  );
+
                   hls.attachMedia(videoRef.current);
                   hls.loadSource(
                     popSong.streamingUrls[popSong.streamingUrlIdx].url
@@ -283,7 +301,7 @@ function Player(props: {
         setPlaybackState("PLAYING");
         break;
       case "SKIPPING":
-        videoRef.current.currentTime = videoRef.current.duration;
+        videoRef.current.currentTime = videoRef.current.duration || 0;
         videoRef.current.play();
         break;
     }

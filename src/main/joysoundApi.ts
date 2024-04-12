@@ -144,6 +144,9 @@ export class JoysoundAPI extends RESTDataSource {
         "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
         Cookie: generateCookieString(creds.cookies),
         "X-CSRF-TOKEN": creds.csrfToken,
+        Referer: "https://www.sound-cafe.jp/player",
+        "User-Agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/112.0",
       },
     });
   }
@@ -156,21 +159,32 @@ export class JoysoundAPI extends RESTDataSource {
       order: "asc",
       start: start.toString(),
       count: count.toString(),
+    }).catch((err) => {
+      console.log(err);
+      return [] as JoysoundArtistListItem[];
     });
   }
 
   async getMovieUrls(id: string) {
-    const creds = await this.credsProvider();
-
-    return this.get<JoysoundMovieList>(
-      "/player/contentsInfo",
-      { songNumber: id, serviceType: "003000761" },
-      { headers: { Cookie: generateCookieString(creds.cookies) } }
-    );
+    return this.post<JoysoundMovieList>("/player/contentsInfo", {
+      songNumber: id,
+      serviceType: "003000761",
+    });
   }
 
   async getSongDetail(id: string) {
-    const creds = await this.credsProvider();
+    const creds = await this.credsProvider().catch((err) => {
+      console.log("Login Failed");
+      return null;
+    });
+    if (creds === undefined || creds === null) {
+      return {
+        name: "Error",
+        artistName: "Error",
+        lyricsPreview: "Error",
+        tieUp: "Error",
+      };
+    }
 
     const data = await this.get(
       `songdetail/${id}`,
@@ -220,6 +234,9 @@ export class JoysoundAPI extends RESTDataSource {
       order: "asc",
       start: start.toString(),
       count: count.toString(),
+    }).catch((err) => {
+      console.log(err);
+      return [] as JoysoundSongListItem[];
     });
   }
 
@@ -231,24 +248,17 @@ export class JoysoundAPI extends RESTDataSource {
       order: "asc",
       start: start.toString(),
       count: count.toString(),
+    }).catch((err) => {
+      console.log(err);
+      return [] as JoysoundSongListItem[];
     });
   }
 
   async getSongRawData(id: string) {
-    const creds = await this.credsProvider();
-
-    return this.get<JoysoundSongRawData>(
-      "/player/getFME",
-      { songNumber: id, serviceType: "003000761" },
-      {
-        headers: {
-          Cookie: generateCookieString(creds.cookies),
-          Referer: "https://www.sound-cafe.jp/player",
-          "User-Agent":
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/112.0",
-        },
-      }
-    );
+    return this.post<JoysoundSongRawData>("/player/getFME", {
+      songNumber: id,
+      serviceType: "003000761",
+    });
   }
 
   static async login(email: string, password: string) {

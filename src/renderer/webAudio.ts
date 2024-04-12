@@ -10,25 +10,35 @@ export default class KarafriendsAudio {
     this.gainNode.connect(this.audioContext.destination);
 
     this.vocoderNode = null;
-    this.audioContext.audioWorklet
-      .addModule(new URL("./audio/phazeAudioWorklet.ts", import.meta.url))
-      .then(
-        () => {
-          this.vocoderNode = new AudioWorkletNode(
-            this.audioContext,
-            "phase-vocoder"
-          );
-          this.gainNode.disconnect();
-          this.gainNode.connect(this.vocoderNode);
-          this.vocoderNode.connect(this.audioContext.destination);
-        },
-        (e) => {
-          console.log(
-            "could not load pitch shift audio worklet, pitch shift will not work",
+    try {
+      this.audioContext.audioWorklet
+        .addModule(new URL("./audio/phazeAudioWorklet.ts", import.meta.url))
+        .then(() => {
+          try {
+            // Operations that might throw synchronous errors
+            this.vocoderNode = new AudioWorkletNode(
+              this.audioContext,
+              "phase-vocoder"
+            );
+            this.gainNode.disconnect();
+            this.gainNode.connect(this.vocoderNode);
+            this.vocoderNode.connect(this.audioContext.destination);
+          } catch (error) {
+            // Handle errors that occur during the audio node operations
+            console.error("Error setting up audio nodes:", error);
+          }
+        })
+        .catch((e) => {
+          // Handle errors specifically related to the module loading
+          console.error(
+            "Could not load pitch shift audio worklet, pitch shift will not work:",
             e
           );
-        }
-      );
+        });
+    } catch (e) {
+      // Handle other synchronous errors
+      console.error("An unexpected error occurred:", e);
+    }
   }
 
   pitchShift(semitones: number) {

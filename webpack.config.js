@@ -56,6 +56,13 @@ module.exports = (env, argv) => [
       // https://github.com/jsdom/jsdom/issues/1708
       canvas: "{}",
     },
+    devServer: {
+      static: {
+        directory: path.join(__dirname, "build/dev"),
+      },
+      compress: true,
+      port: 3000,
+    },
   }),
   merge(COMMON_CONFIG, {
     target: "electron-preload",

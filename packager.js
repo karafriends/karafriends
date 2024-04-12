@@ -24,11 +24,11 @@ const { glob } = require("glob");
       osxNotarize: {
         tool: "notarytool",
         appleApiKey: process.env.NOTARIZATION_KEY_PATH,
-        appleApiKeyId: "Z4H7RZ6QUT",
-        appleApiIssuer: "69a6de70-1249-47e3-e053-5b8c7c11a4d1",
+        appleApiKeyId: "Z744X6G756",
+        appleApiIssuer: "69a6de7c-6a99-47e3-e053-5b8c7c11a4d1",
       },
       osxSign: {
-        identity: "Developer ID Application: Connor Worley (WZ6JC3T383)",
+        identity: "Developer ID Application: Brandon Smith (JH8AT59Q63)",
         // yt-dlp needs to load python dylibs we don't have control over
         optionsForFile: (path) =>
           path.endsWith("/yt-dlp_macos")
