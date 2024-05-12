@@ -2,5 +2,6 @@
 members = [
     "karafriends-lib",
     "karafriends",
+    "launcher",
 ]
 resolver = "2"
