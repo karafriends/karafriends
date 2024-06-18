@@ -26,7 +26,7 @@ jobs:
           cache: pip
       - run: pip install ephemeral-port-reserve
       - uses: Homebrew/actions/setup-homebrew@master
-      - uses: mozilla-actions/sccache-action@v0.0.4
+      - uses: mozilla-actions/sccache-action@v0.0.5
       - name: Configure sccache
         uses: actions/github-script@v7
         with:
@@ -74,7 +74,7 @@ jobs:
         with:
           node-version: 22
       - run: npm install -g yarn
-      - uses: mozilla-actions/sccache-action@v0.0.4
+      - uses: mozilla-actions/sccache-action@v0.0.5
       - uses: MasterworksIO/action-local-cache@2.1.0
         with:
           path: |
@@ -97,7 +97,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - uses: mozilla-actions/sccache-action@v0.0.4
+      - uses: mozilla-actions/sccache-action@v0.0.5
       - name: Configure sccache
         uses: actions/github-script@v7
         with:
@@ -128,7 +128,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - uses: mozilla-actions/sccache-action@v0.0.4
+      - uses: mozilla-actions/sccache-action@v0.0.5
       - name: Configure sccache
         uses: actions/github-script@v7
         with:
