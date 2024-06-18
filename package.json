@@ -47,7 +47,7 @@
     "graphql": "16.8.1",
     "graphql-subscriptions": "2.0.0",
     "graphql-ws": "5.16.0",
-    "hls.js": "1.5.8",
+    "hls.js": "1.5.11",
     "kuromoji": "0.1.2",
     "kuroshiro": "1.2.0",
     "kuroshiro-analyzer-kuromoji": "1.1.0",
