@@ -115,7 +115,7 @@
     "@types/uuid": "^9",
     "@types/webpack-env": "1.18.5",
     "@types/ws": "^8",
-    "@wdio/cli": "8.36.1",
+    "@wdio/cli": "8.39.0",
     "@wdio/local-runner": "8.36.1",
     "@wdio/mocha-framework": "8.36.1",
     "@yarnpkg/pnpify": "4.1.0",
