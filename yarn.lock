@@ -6438,17 +6438,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wdio/mocha-framework@npm:8.36.1":
-  version: 8.36.1
-  resolution: "@wdio/mocha-framework@npm:8.36.1"
+"@wdio/logger@npm:8.38.0":
+  version: 8.38.0
+  resolution: "@wdio/logger@npm:8.38.0"
+  dependencies:
+    chalk: ^5.1.2
+    loglevel: ^1.6.0
+    loglevel-plugin-prefix: ^0.8.4
+    strip-ansi: ^7.1.0
+  checksum: 3cb5b0e23c95317170c5b7a76f46eb37f5416ffacbcdfbea9cd6fa5dbc3571ed0ab82f98c7d56f8b7b11eb61912eae0eefe7cfae21fb70630bfd892a084f4a9f
+  languageName: node
+  linkType: hard
+
+"@wdio/mocha-framework@npm:8.39.0":
+  version: 8.39.0
+  resolution: "@wdio/mocha-framework@npm:8.39.0"
   dependencies:
     "@types/mocha": ^10.0.0
     "@types/node": ^20.1.0
-    "@wdio/logger": 8.28.0
-    "@wdio/types": 8.36.1
-    "@wdio/utils": 8.36.1
+    "@wdio/logger": 8.38.0
+    "@wdio/types": 8.39.0
+    "@wdio/utils": 8.39.0
     mocha: ^10.0.0
-  checksum: 09d4fb22297beb682804a66c1cc44b74291b1074c14735c8178a2f01ba203b894276665bd5258edbce6a07e42ab4dd852e2a7e0129e862238fcd94b606996a4e
+  checksum: b2fec6713334c84f0c3120471f743249de051eba00097becbb571bfa82ebbee481564916a8d613a63754a4577f0de42982a25e4a176f7e109a71f3c11b36b2e2
   languageName: node
   linkType: hard
 
@@ -6505,6 +6517,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@wdio/types@npm:8.39.0":
+  version: 8.39.0
+  resolution: "@wdio/types@npm:8.39.0"
+  dependencies:
+    "@types/node": ^20.1.0
+  checksum: 2245b510deaafb9d9a4cf2d2c5970add729258bfe9395860fd2144bad5aff7d22bd0c045a83c4e2d01ddf293889d052fe98f7c7cb485d6a5d1584f7c284704d8
+  languageName: node
+  linkType: hard
+
 "@wdio/utils@npm:8.36.0":
   version: 8.36.0
   resolution: "@wdio/utils@npm:8.36.0"
@@ -6544,6 +6565,27 @@ __metadata:
     split2: ^4.2.0
     wait-port: ^1.0.4
   checksum: d54a5589d3baa917ee21599c29a7c6b3e11e99c90913382e89c29617ce914eb7766e7ba86d371acdc91d6bd7821444c9a3ba6ba8a65811c05eb70531510d51da
+  languageName: node
+  linkType: hard
+
+"@wdio/utils@npm:8.39.0":
+  version: 8.39.0
+  resolution: "@wdio/utils@npm:8.39.0"
+  dependencies:
+    "@puppeteer/browsers": ^1.6.0
+    "@wdio/logger": 8.38.0
+    "@wdio/types": 8.39.0
+    decamelize: ^6.0.0
+    deepmerge-ts: ^5.1.0
+    edgedriver: ^5.5.0
+    geckodriver: ^4.3.1
+    get-port: ^7.0.0
+    import-meta-resolve: ^4.0.0
+    locate-app: ^2.1.0
+    safaridriver: ^0.1.0
+    split2: ^4.2.0
+    wait-port: ^1.0.4
+  checksum: f994aab6eb46a49523f8ee7fe2c72f2c6eba3a4d6ad00e38f248f363a9e2d4d1cd98075e425b55e3a0a9156ac5b4b7afa4f29329d45ebb7dc9f4e164cf4720e5
   languageName: node
   linkType: hard
 
@@ -6933,6 +6975,13 @@ __metadata:
   bin:
     shell: ./lib/cli.js
   checksum: 01d1b6db891df60ad9458a110657189d4ee19d9df33dd73103ad7d0a8dfebfcd523126d24f745e9465a292863faac570690571535849a2668535688416bba960
+  languageName: node
+  linkType: hard
+
+"@zip.js/zip.js@npm:^2.7.44":
+  version: 2.7.45
+  resolution: "@zip.js/zip.js@npm:2.7.45"
+  checksum: c78999b4794168eed698dc610bb5152677929996e3bbe45af7439854be345b7a0a2a14d2e555748a97b496141399927949d18cc604e3403f23494c47e0c47480
   languageName: node
   linkType: hard
 
@@ -9633,6 +9682,22 @@ __metadata:
   bin:
     edgedriver: bin/edgedriver.js
   checksum: 1557adfc6b9e85907bce57da3386edf6e31ec1bffba0ac2b452776e7747a45af696b996a24deea57a54d516123e6e3a7f28b8c435fcd3c97689f9207ba1da3ed
+  languageName: node
+  linkType: hard
+
+"edgedriver@npm:^5.5.0":
+  version: 5.6.0
+  resolution: "edgedriver@npm:5.6.0"
+  dependencies:
+    "@wdio/logger": ^8.28.0
+    "@zip.js/zip.js": ^2.7.44
+    decamelize: ^6.0.0
+    edge-paths: ^3.0.5
+    node-fetch: ^3.3.2
+    which: ^4.0.0
+  bin:
+    edgedriver: bin/edgedriver.js
+  checksum: f492f94b35b4256c83498b34266a363d5bcb4bde1f207ba2c7dc93d72614ef925fc8fe87e6e7ff27d979f7857bf8a19823760de127fa1cbe7dbe89129b1c69f6
   languageName: node
   linkType: hard
 
@@ -13404,7 +13469,7 @@ __metadata:
     "@types/youtube-player": 5.5.11
     "@wdio/cli": 8.36.1
     "@wdio/local-runner": 8.36.1
-    "@wdio/mocha-framework": 8.36.1
+    "@wdio/mocha-framework": 8.39.0
     "@yarnpkg/pnpify": 4.1.0
     apollo-datasource-rest: 3.7.0
     apollo-server-express: 3.13.0
