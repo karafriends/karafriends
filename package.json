@@ -144,7 +144,7 @@
     "wait-on": "7.2.0",
     "wdio-electron-service": "6.5.0",
     "webdriverio": "8.36.1",
-    "webpack": "5.91.0",
+    "webpack": "5.92.1",
     "webpack-cli": "5.1.4",
     "webpack-merge": "5.10.0"
   },
