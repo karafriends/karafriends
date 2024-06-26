@@ -5407,10 +5407,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/audioworklet@npm:0.0.55":
-  version: 0.0.55
-  resolution: "@types/audioworklet@npm:0.0.55"
-  checksum: 6742f48a126d192196d193deb57df0f9c9e7f5074afc8eed1a4229bc634d12bb214f3ec94e4811a1531b325968353271a4ef4b2e4826e104de97232004a92f61
+"@types/audioworklet@npm:0.0.56":
+  version: 0.0.56
+  resolution: "@types/audioworklet@npm:0.0.56"
+  checksum: 7a62a8d020fdbb9f1c060719a9a80d24e9469f21e5b1474603f0edf693a0f3cdd1359b66c1d1baee1d026a21dd230f53d4dd3567556051728dd7b91596d70240
   languageName: node
   linkType: hard
 
@@ -13374,7 +13374,7 @@ __metadata:
     "@parcel/transformer-sass": 2.12.0
     "@sentry/browser": 8.1.0
     "@sentry/node": 8.2.1
-    "@types/audioworklet": 0.0.55
+    "@types/audioworklet": 0.0.56
     "@types/babel__core": 7
     "@types/color-convert": 2.0.3
     "@types/compression": ^1
