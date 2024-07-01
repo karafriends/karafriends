@@ -6126,10 +6126,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/relay-runtime@npm:*, @types/relay-runtime@npm:14.1.10":
+"@types/relay-runtime@npm:*":
   version: 14.1.10
   resolution: "@types/relay-runtime@npm:14.1.10"
   checksum: 498af0a8b6521edcf3c2945bbd126167ffe29d18505085527641ba5d617533e37f356af17ec8d1ea7192fa1d398da116b9457d5a5c054d9b2f9ea2542adec61d
+  languageName: node
+  linkType: hard
+
+"@types/relay-runtime@npm:17.0.1":
+  version: 17.0.1
+  resolution: "@types/relay-runtime@npm:17.0.1"
+  checksum: baa4d5b5c0a9bfb79037195565ffc1f8ac63d82a24a11fd1c9893de0fe1f73d24c33e6968d2d0bdb488c922adc4a62b82d4e3713f5db7a6b641bbc5eb86a266e
   languageName: node
   linkType: hard
 
@@ -13395,7 +13402,7 @@ __metadata:
     "@types/react-relay": 16.0.6
     "@types/react-router-dom": 5.3.3
     "@types/react-swipeable": 5.2.0
-    "@types/relay-runtime": 14.1.10
+    "@types/relay-runtime": 17.0.1
     "@types/user-agents": 1.0.4
     "@types/uuid": ^9
     "@types/webpack-env": 1.18.5
@@ -13464,7 +13471,7 @@ __metadata:
     relay-compiler: 15.0.0
     relay-compiler-language-typescript: 15.0.1
     relay-config: 12.0.1
-    relay-runtime: 16.2.0
+    relay-runtime: 17.0.0
     supports-color: 9.4.0
     ts-invariant: 0.10.3
     ts-loader: 9.5.1
@@ -16798,6 +16805,17 @@ __metadata:
     fbjs: ^3.0.2
     invariant: ^2.2.4
   checksum: 7a6378b48495d014404bf08ba3ed4afa07838727800141ead3cd1b908c61556ef56d1ae7756f4b72134fd4e62b916b9522e65fde4144806feed29aecf57d3bfc
+  languageName: node
+  linkType: hard
+
+"relay-runtime@npm:17.0.0":
+  version: 17.0.0
+  resolution: "relay-runtime@npm:17.0.0"
+  dependencies:
+    "@babel/runtime": ^7.0.0
+    fbjs: ^3.0.2
+    invariant: ^2.2.4
+  checksum: c97d036cdacf218bfd8f14a8e1c302450cd789e94912da31f5a3d4d0410af6f13f1fb2e14aae975513b0549b84e72fab968286f91053301676ceaff88f41b8d2
   languageName: node
   linkType: hard
 
