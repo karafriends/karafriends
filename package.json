@@ -59,7 +59,7 @@
     "node-fetch": "3.3.2",
     "parcel-reporter-static-files-copy": "1.5.3",
     "polyline-normals": "2.0.2",
-    "postcss": "8.4.38",
+    "postcss": "8.4.39",
     "promise-retry": "2.0.1",
     "qrcode": "1.5.3",
     "react": "18.2.0",
